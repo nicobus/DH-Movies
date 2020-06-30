@@ -1,0 +1,15 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+.btn-buscar{
+    background-color: rgb(153, 51, 255);
+    color: white;
+    font-weight: 700;
+}
+.bg-footer{
+    background-color: #5C5B60;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
