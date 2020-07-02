@@ -19,4 +19,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::get('/pelicula/{id}', 'MovieController@show')->name('pelicula.detalle');
+
+
+
+
 

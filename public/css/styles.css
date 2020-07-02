@@ -6,10 +6,18 @@ body {
     color: white;
     font-weight: 700;
 }
+.row a{
+    text-decoration: none;
+    color: black;
+}
 .bg-footer{
     background-color: #5C5B60;
 }
-a{
+.nav-item a{
     text-decoration: none;
     color: white;
+}
+
+.font-size28px{
+    font-size: 28px;
 }

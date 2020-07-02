@@ -11,12 +11,13 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Peliculas
+                  Titulos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  @foreach ($genres as $genre)
+                  <a class="dropdown-item" href="#">{{$genre->name}}</a>
+                  @endforeach
+                  <a class="dropdown-item" href="#">Ver Todos</a>
                 </div>
               </li>
               <li class="nav-item dropdown">

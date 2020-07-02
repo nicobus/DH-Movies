@@ -14,9 +14,9 @@
             <h4 class="font-weight-bold">
               NUESTRAS REDES
             </h4>
-            <i class="mx-2 fa fa-facebook-official" aria-hidden="true"></i>
-            <i class="mx-2 fa fa-instagram" aria-hidden="true"></i>
-            <i class="mx-2 fa fa-twitter-square" aria-hidden="true"></i>
+            <i class="mx-2 fa fa-facebook-official font-size28px" aria-hidden="true"></i>
+            <i class="mx-2 fa fa-instagram font-size28px" aria-hidden="true"></i>
+            <i class="mx-2 fa fa-twitter-square font-size28px" aria-hidden="true"></i>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <h4 class="font-weight-bold">
