@@ -1,9 +1,9 @@
 @extends('layouts.layout')
 @section('titulo')
-Movie | DH-Movies
+Actor | DH-Movies
 @endsection
 @section('contenidoPrincipal')
 <main>
-  @include('parciales._cardMovieFull')
+  @include('parciales._cardActorFull')
 </main>
 @endsection

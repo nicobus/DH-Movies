@@ -22,7 +22,7 @@
             <h4 class="font-weight-bold">
               AYUDA
             </h4>
-            <ul class="nav flex-column">
+            <ul class="redes-sociales nav flex-column">
                 <li class="nav-item">
                     <a href="#">Preguntas frecuentes</a>
                 </li>

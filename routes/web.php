@@ -21,6 +21,14 @@ Auth::routes();
 
 Route::get('/pelicula/{id}', 'MovieController@show')->name('pelicula.detalle');
 
+Route::get('/peliculas', 'MovieController@list')->name('peliculas');
+
+Route::get('/peliculas/{genero}', 'MovieController@byGenre')->name('peliculas.porGenero');
+
+Route::get('/buscarpelicula', 'MovieController@byTitle')->name('peliculas.porTitulo');
+
+Route::get('/actor/{id}', 'ActorController@show')->name('actor.detalle');
+
 
 
 

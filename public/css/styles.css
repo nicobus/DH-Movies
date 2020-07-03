@@ -13,11 +13,20 @@ body {
 .bg-footer{
     background-color: #5C5B60;
 }
-.nav-item a{
+.redes-sociales .nav-item a{
     text-decoration: none;
     color: white;
 }
 
 .font-size28px{
     font-size: 28px;
+}
+  
+.link-detalle-movie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }

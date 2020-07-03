@@ -11,7 +11,7 @@ class Genre extends Model
     
     public function movies()
     {
-        return $this->hasMany('App\Movie', 'marca_id', 'id');
+        return $this->hasMany('App\Movie', 'id', 'movie_id');
     }
     
 }
