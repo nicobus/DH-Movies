@@ -1,6 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.layout')
+@section('titulo')
+Iniciar sesion| DH-Movies
+@endsection
+@section('contenidoPrincipal')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

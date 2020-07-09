@@ -18,7 +18,7 @@ Home ! DH-Movies
     <div class="peliculas mx-4">
         <h2 class="m-3">Novedades</h2>
         <div class="row">
-            @foreach ($moviesRandom as $movie)
+            @foreach ($moviesNovedades as $movie)
             @include('parciales._cardMovieBasic')
             @endforeach
         </div>
