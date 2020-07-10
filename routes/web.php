@@ -23,15 +23,15 @@ Route::get('/pelicula/{id}', 'MovieController@show')->name('pelicula.detalle');
 
 Route::get('/peliculas', 'MovieController@list')->name('peliculas');
 
-Route::get('/agregarpelicula', 'MovieController@create')->name('pelicula.agregar');
+Route::get('/agregarpelicula', 'MovieController@create')->name('pelicula.agregar')->middleware('admin:admin');
 
-Route::post('/agregarpelicula', 'MovieController@store')->name('pelicula.guardar');
+Route::post('/agregarpelicula', 'MovieController@store')->name('pelicula.guardar')->middleware('admin:admin');
 
-Route::get('/peliculamodificar/{id}', 'MovieController@edit')->name('pelicula.editar');
+Route::get('/peliculamodificar/{id}', 'MovieController@edit')->name('pelicula.editar')->middleware('admin:admin');
 
-Route::put('/peliculaactualizar/{id}', 'MovieController@update')->name('pelicula.actualizar');
+Route::put('/peliculaactualizar/{id}', 'MovieController@update')->name('pelicula.actualizar')->middleware('admin:admin');
 
-Route::delete('/eliminarpelicula', 'MovieController@destroy')->name('pelicula.eliminar');
+Route::delete('/eliminarpelicula', 'MovieController@destroy')->name('pelicula.eliminar')->middleware('admin:admin');
 
 Route::get('/peliculas/{genero}', 'MovieController@byGenre')->name('peliculas.porGenero');
 
@@ -41,9 +41,9 @@ Route::get('/actor/{id}', 'ActorController@show')->name('actor.detalle');
 
 Route::get('/registrarusuario', 'UserController@create')->name('usuario.registrar');
 
-Route::get('/listadopeliculas', 'AdminController@list')->name('peliculas.admin');
+Route::get('/listadopeliculas', 'AdminController@list')->name('peliculas.admin')->middleware('admin:admin');
 
-Route::get('/adminbuscarpelicula', 'AdminController@byTitle')->name('porTitulo.admin');
+Route::get('/adminbuscarpelicula', 'AdminController@byTitle')->name('porTitulo.admin')->middleware('admin:admin');
 
 Route::post('/usuario/logout', "UserController@logout")->name('user.logout');
 

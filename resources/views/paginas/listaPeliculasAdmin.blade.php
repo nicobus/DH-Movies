@@ -4,8 +4,8 @@
 @endsection
 @section('contenidoPrincipal')
 <main>
-    <div class="alert alert-danger" role="alert">
-        <span>Seleccione o busque la pelicula que desea editar/eliminar.</span>
+    <div class="alert alert-warning d-md-flex" role="alert">
+        <span class="mr-auto my-auto">Seleccione o busque la pelicula que desea editar/eliminar.</span>
         <form action="{{route('porTitulo.admin')}}" class="form-inline my-4 my-lg-0 ml-auto">
             <input class="form-control mr-sm-2 my-2" type="search" placeholder="Ingrese el título de la película..."
                 aria-label="Search" name="movieTitle" id="movieTitle">

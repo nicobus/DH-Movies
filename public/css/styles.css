@@ -33,3 +33,16 @@ body {
 .panel-session{
     color: white;
 }
+.link-white{
+    color: white;
+}
+
+.link-white:hover{
+    color: purple;
+}
+.font-color-wuite{
+    color: white;
+}
+.bg-purple{
+    background-color: rgb(153, 51, 255);
+}

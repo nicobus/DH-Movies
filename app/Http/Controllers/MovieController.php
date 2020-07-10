@@ -86,4 +86,8 @@ class MovieController extends Controller
         $movie->delete();
         return redirect(route('peliculas'));
     }
+    public function listApi(){
+        $movies = Movie::All();
+        return json_encode($movies);
+    }
 }

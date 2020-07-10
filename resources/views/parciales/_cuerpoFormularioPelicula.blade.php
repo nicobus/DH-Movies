@@ -5,7 +5,6 @@
     <div class="col-md-6">
         <input id="title" type="text" class="form-control @error('title') is-invalid @enderror"
             placeholder="Ingrese el título de la película..." name="title" value="{{old('title', $movie->title)}}">
-
         @error('title')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -31,7 +30,6 @@
 
 <div class="form-group row">
     <label for="awards" class="col-md-4 col-form-label text-md-right">Premios:</label>
-
     <div class="col-md-6">
         <input id="awards" type="number" class="form-control @error('awards') is-invalid @enderror"
             placeholder="Ingrese la cantidad de premios..." name="awards" value="{{old('awards', $movie->awards)}}">
@@ -45,7 +43,6 @@
 
 <div class="form-group row">
     <label for="release_date" class="col-md-4 col-form-label text-md-right">Fecha de lanzamiento:</label>
-
     <div class="col-md-6">
         <input placeholder="Seleccione la fecha de lanzamiento..." type="date" id="release_date" name="release_date" class="form-control @error('release_date') is-invalid @enderror" value="{{old('release_date', $movie->release_date)}}">
         @error('release_date')
@@ -73,7 +70,11 @@
     <label for="genre_id" class="col-md-4 col-form-label text-md-right">Género:</label>
     <div class="col-md-6">
         <select class="form-control custom-select mr-sm-2 @error('genre_id') is-invalid @enderror" id="genre_id" name="genre_id">
-            <option selected>Seleccione el género de la pelicula</option>
+            @if ($movie->genre != null)
+            <option value="{{$movie->genre->id}}" selected>{{$movie->genre->name}}</option> 
+            @else
+            <option value="" selected>Seleccione el género de la pelicula</option>
+            @endif
             @foreach ($genres as $genre)
             <option value="{{$genre->id}}">{{$genre->name}}</option>
             @endforeach

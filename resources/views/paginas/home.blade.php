@@ -1,9 +1,14 @@
 @extends('layouts.layout')
 @section('titulo')
-Home ! DH-Movies
+Home | DH-Movies
 @endsection
 @section('contenidoPrincipal')
 <main>
+    @if(session()->has('message'))
+    <div class="alert alert-danger" role="alert">
+        {{ session()->get('message') }}
+      </div>
+@endif
     {{-- inicio 5 peliculas random --}}
     <div class="peliculas mx-4">
         <h2 class="m-3">Peliculas</h2>

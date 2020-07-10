@@ -3,7 +3,7 @@
 Iniciar sesion| DH-Movies
 @endsection
 @section('contenidoPrincipal')
-<div class="container">
+<div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

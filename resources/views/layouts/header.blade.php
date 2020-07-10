@@ -7,15 +7,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse my-4" id="navbarNavDropdown">
-            <div class="panel-session d-lg-none">
+            <div class="panel-session d-lg-none mb-4">
                 @if (Auth::user() != null)
                 <div class="dropdown">
                     <span class="dropdown-toggle font-weight-bold" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Hola,{{Auth::user()->name}}
+                        Hola, {{Auth::user()->name}}
                     </span>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @if (Auth::user()->admin == 1)
+                        @if (Auth::user()->hasRole('admin'))
                         <a class="dropdown-item" href="{{route('pelicula.agregar')}}">Añadir Pelicula</a>
                         <a class="dropdown-item" href="{{route('peliculas.admin')}}">Modificar/eliminar pelicula</a>
                         @endif
@@ -30,8 +30,8 @@
                 </div>
                 @else
                 <div>
-                    <a class="link-red mr-3" href="{{ route('login') }}">Iniciar sesión</a>
-                    <a class="link-red" href="{{ route('register') }}">Registrarse</a>
+                    <a class="link-white mr-3" href="{{ route('login') }}">Iniciar sesión</a>
+                    <a class="link-white" href="{{ route('register') }}">Registrarse</a>
                 </div>
                 @endif
             </div>
@@ -73,4 +73,32 @@
             </form>
         </div>
     </nav>
+    <div class="panel-session bg-purple d-none d-lg-flex justify-content-end py-2">
+        @if (Auth::user() != null)
+        <div class="dropdown mx-3">
+            <span class="dropdown-toggle font-weight-bold" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Hola, {{Auth::user()->name}}
+            </span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @if (Auth::user()->hasRole('admin'))
+                <a class="dropdown-item" href="{{route('pelicula.agregar')}}">Añadir Pelicula</a>
+                <a class="dropdown-item" href="{{route('peliculas.admin')}}">Modificar/eliminar pelicula</a>
+                @endif
+                <a class="dropdown-item" href="#"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{route('user.logout')}}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+        @else
+        <div class="font-weight-bold mx-3">
+            <a class="link-white mr-3" href="{{ route('login') }}">Iniciar sesión</a>
+            <a class="link-white" href="{{ route('register') }}">Registrarse</a>
+        </div>
+        @endif
+    </div>
 </header>
