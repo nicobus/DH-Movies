@@ -18,7 +18,9 @@ class Movie extends Model
         return $this->belongsToMany('App\Actor', 'actor_movie', 'movie_id', 'actor_id');
     }
     public function getReleaseDateAttribute($value) {
-        return Carbon::parse($value)->locale('es_Es')->isoFormat('d [de] MMMM [de] YYYY');
+        return Carbon::parse($value)->format('Y-m-d');
     }
-    
+    public function getFechaLargaEspañol() {
+        return Carbon::parse($this->release_date)->locale('es_Es')->isoFormat('d [de] MMMM [de] YYYY');
+    }
 }

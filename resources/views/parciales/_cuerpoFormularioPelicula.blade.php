@@ -17,9 +17,10 @@
     <label for="rating" class="col-md-4 col-form-label text-md-right">Rating:</label>
     <div class="col-md-6">
         <input id="rating" type="text" class="form-control @error('rating') is-invalid @enderror"
-        placeholder="Seleccione el rating de la película..." name="rating" value="{{old('rating', $movie->rating)}}">
-        <input type="range" class="custom-range" min="0" max="10" value="{{old('rating', $movie->rating)}}" step="0.1" id="rating-range" name="rating-range"
-            oninput="actualizarRating(value)">
+            placeholder="Seleccione el rating de la película..." name="rating"
+            value="{{old('rating', $movie->rating)}}">
+        <input type="range" class="custom-range" min="0" max="10" value="{{old('rating', $movie->rating)}}" step="0.1"
+            id="rating-range" name="rating-range" oninput="actualizarRating(value)">
         @error('rating')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -44,7 +45,9 @@
 <div class="form-group row">
     <label for="release_date" class="col-md-4 col-form-label text-md-right">Fecha de lanzamiento:</label>
     <div class="col-md-6">
-        <input placeholder="Seleccione la fecha de lanzamiento..." type="date" id="release_date" name="release_date" class="form-control @error('release_date') is-invalid @enderror" value="{{old('release_date', $movie->release_date)}}">
+        <input placeholder="Seleccione la fecha de lanzamiento..." type="date" id="release_date" name="release_date"
+            class="form-control @error('release_date') is-invalid @enderror"
+            value="{{old('release_date', $movie->release_date)}}">
         @error('release_date')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -52,7 +55,6 @@
         @enderror
     </div>
 </div>
-
 <div class="form-group row">
     <label for="length" class="col-md-4 col-form-label text-md-right">Duracion:</label>
     <div class="col-md-6">
@@ -69,11 +71,16 @@
 <div class="form-group row">
     <label for="genre_id" class="col-md-4 col-form-label text-md-right">Género:</label>
     <div class="col-md-6">
-        <select class="form-control custom-select mr-sm-2 @error('genre_id') is-invalid @enderror" id="genre_id" name="genre_id">
+        <select class="form-control custom-select mr-sm-2 @error('genre_id') is-invalid @enderror" id="genre_id"
+            name="genre_id">
+            @if (old('genre_id'))
+            <option value="{{$genres[old('genre_id')-1]->id}}" selected>{{$genres[old('genre_id')-1]->name}}</option>
+            @else
             @if ($movie->genre != null)
-            <option value="{{$movie->genre->id}}" selected>{{$movie->genre->name}}</option> 
+            <option value="{{$movie->genre->id}}" selected>{{$movie->genre->name}}</option>
             @else
             <option value="" selected>Seleccione el género de la pelicula</option>
+            @endif
             @endif
             @foreach ($genres as $genre)
             <option value="{{$genre->id}}">{{$genre->name}}</option>

@@ -14,7 +14,7 @@
                 @else
                 <li class="list-group-item">Sin género</li>
                 @endif
-                <li class="list-group-item">Fecha de lanzamiento: {{$movie->release_date}}</li>
+                <li class="list-group-item">Fecha de lanzamiento: {{$movie->getFechaLargaEspañol()}}</li>
                 <li class="list-group-item">Duracion: {{$movie->length}} minutos</li>
                 <li class="list-group-item">Actores:
                     @foreach ($movie->actors as $actor)
