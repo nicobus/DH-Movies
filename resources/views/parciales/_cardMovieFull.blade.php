@@ -18,7 +18,9 @@
                 <li class="list-group-item">Duracion: {{$movie->length}} minutos</li>
                 <li class="list-group-item">Actores:
                     @foreach ($movie->actors as $actor)
-                    <a href="{{route('actor.detalle', ['id' => $actor->id])}}">{{$actor->getFullName()}}</a>
+                    <span class="actor-link">
+                        <a href="{{route('actor.detalle', ['id' => $actor->id])}}">{{$actor->getFullName()}}</a>
+                    </span>
                     @endforeach
                 </li>
             </ul>

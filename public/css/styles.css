@@ -46,3 +46,15 @@ body {
 .bg-purple{
     background-color: rgb(153, 51, 255);
 }
+.capitalize-first-letter{
+    text-transform: capitalize;
+}
+.actor-link:not(:last-child)::after{
+    content: ", ";
+}
+.actor-link:last-child::after{
+    content: ".";
+}
+.actor-link a{
+    color: blue;
+}

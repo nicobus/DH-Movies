@@ -73,12 +73,12 @@
             </form>
         </div>
     </nav>
-    <div class="panel-session bg-purple d-none d-lg-flex justify-content-end py-2">
+    <div class="panel-session bg-purple d-none d-lg-flex py-2 px-2">
         @if (Auth::user() != null)
         <div class="dropdown mx-3">
             <span class="dropdown-toggle font-weight-bold" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Hola, {{Auth::user()->name}}
+                Hola, <span class="capitalize-first-letter">{{Auth::user()->name}}</span>
             </span>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @if (Auth::user()->hasRole('admin'))

@@ -25,7 +25,7 @@ class MovieRequest extends FormRequest
     {
         return [ 'title' => 'required|string|min:1|max:500',
         'rating' => "required|numeric|min:1|max:10",
-        "awards" => "required|min:0",
+        "awards" => "required|numeric|min:0",
         "release_date" => "required|date",
         "length" => "required|integer|min:1",
         "genre_id" => "required|integer",
