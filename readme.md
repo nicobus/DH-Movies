@@ -7,7 +7,7 @@ Proyecto correspondiente al desafio de Laravel
 1. Terner instalada la base de datos movies_db
 2. Clonar el proyecto en la carpeta que sea de nuestro agrado con el comando "git clone https://github.com/nicobus/DH-Movies.git"
 3. Dentro de la carpeta del proyecto a travez del comando "composer update" actualizaremos las dependencias necesarias
-4. Con el comando "pgp artisan storage:link" vinculamos la carpeta storage a la carpeta publica.
+4. Con el comando "php artisan storage:link" vinculamos la carpeta storage a la carpeta publica.
 5. Ejecutamos las migraciones con el comando "php artisan migrate"
 6. Ejecutamos los seeders para cargar los roles de usuarios y un admin con el comando "php artisan db:seed"
 
